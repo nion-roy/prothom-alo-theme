@@ -169,7 +169,6 @@ time {
    padding: 2rem 0;
 }
 
-
 .tab-wrap .nav a {
    font-size: 1.2rem;
    font-weight: 700;
@@ -244,6 +243,18 @@ time {
 .tab-wrap .col-lg-3.mx-auto .me-2 {
    width: 76%;
 }
+
+.entertainment-section,
+.living-life-section,
+.trade-section,
+.video-section,
+.photo-section,
+.multi-section {
+   padding: 2rem 0;
+}
+
+
+
 
 /* ======== END TAB MENU ======== */
 
@@ -392,6 +403,10 @@ time {
    color: #2d3436;
 }
 
+.multi-wrap .overflow-hidden {
+   max-height: 170px;
+}
+
 /* ======== END MULTI MENU ======== */
 
 /* ======== START FOOTER MENU ======== */
@@ -531,6 +546,10 @@ time {
       text-align: center;
    }
 
+   .multi-wrap .overflow-hidden {
+      max-height: 100% !important;
+   }
+
    .footer-wrap .d-inline-block.w-25 {
       width: 50% !important;
    }
@@ -563,4 +582,5 @@ time {
       margin: 6px 0;
    }
 }
+
 /* ======== END 767PX MOBILE VIEW MENU ======== */
