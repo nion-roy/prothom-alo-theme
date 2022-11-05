@@ -207,12 +207,12 @@ header {
    background: #000;
    opacity: .4;
    display: none;
-   cursor: pointer;
 }
 
 .overlay.active {
    display: block;
    z-index: 999;
+   cursor: pointer;
 }
 
 .nav-wrap {
@@ -913,6 +913,7 @@ input:focus {
 #overLay.open {
    display: block;
    opacity: 0;
+   z-index: 1;
 }
 
 .search-bar .form-group {
