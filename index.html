@@ -17,39 +17,76 @@
       <link rel="stylesheet" href="css/style.css" />
    </head>
    <body>
-      <header>
+      <header id="header">
          <div class="container-fluid container">
             <div class="header-top d-flex align-items-center justify-content-between">
                <div class="menu-bar">
                   <div class="d-flex align-items-center">
-                     <div class="menu-bar me-4"><i class="fa-solid fa-bars"></i></div>
-                     <div class="search-bar"><i class="fa-solid fa-magnifying-glass"></i></div>
+                     <div id="openMenu" class="menu-bar me-4"><i class="fa-solid fa-bars"></i></div>
+                     <div class="search-bar d-none d-md-block">
+                        <i id="searchBtn" class="fa-solid fa-magnifying-glass"></i>
+                        <div class="form-group" id="searchMenu">
+                           <input type="search" id="form1" class="form-control" placeholder="type your text.." />
+                           <button type="button" class="btn">
+                              <i class="fas fa-search"></i>
+                           </button>
+                        </div>
+                     </div>
                   </div>
-                  <div class="current-date">
+                  <div class="current-date d-none d-md-block">
                      <span>বুধবার, ০২ নভেম্বর ২০২২</span>
                   </div>
                </div>
                <div class="logo">
-                  <img class="img-fluid" src="img/Prothom Alo.png" alt="" />
+                  <a href="#"><img class="img-fluid" src="img/Prothom Alo.png" alt="" /></a>
                </div>
                <div class="login-wrap">
                   <div class="d-flex align-items-center">
                      <div class="position-relative">
                         <i class="fa-regular fa-bell"></i>
-                        <span class="position-absolute p-1 end-0 bg-danger rounded">
+                        <span class="position-absolute p-1 bg-danger rounded">
                            <span class="visually-hidden">New alerts</span>
                         </span>
                      </div>
-                     <button class="btn border ms-3"><span>login</span></button>
+                     <a href="form/login.html" class="btn border ms-3"><i class="fa-solid fa-user d-md-none text-dark"></i><span class="d-none d-md-block">login</span></a>
                   </div>
-                  <div class="toggle-language d-flex">
+                  <div class="toggle-language d-none d-md-flex">
                      <a class="me-3" href="#"><span>English</span> </a>
                      <label class="xU7wm">Edition</label>
                   </div>
                </div>
             </div>
          </div>
-         <nav class="border">
+         <div class="overlay"></div>
+         <div class="overlay" id="overLay"></div>
+         <div class="hide-content-header" id="hideMenu">
+            <div id="closeMenu" class="close-menu"><i class="fa-solid fa-xmark"></i></div>
+            <ul class="nav justify-content-center">
+               <li class="nav-item"><a class="nav-link" href="#">প্রচ্ছদ</a></li>
+               <li class="nav-item"><a class="nav-link" href="#">সর্বশেষ</a></li>
+               <li class="nav-item"><a class="nav-link" href="#">বিশেষ সংবাদ</a></li>
+               <li class="nav-item"><a class="nav-link" href="#">রাজনীতি</a></li>
+               <li class="nav-item"><a class="nav-link" href="#">করোনাভাইরাস</a></li>
+               <li class="nav-item"><a class="nav-link" href="#">বাংলাদেশ</a></li>
+               <li class="nav-item"><a class="nav-link" href="#">বিশ্ব</a></li>
+               <li class="nav-item"><a class="nav-link" href="#">বাণিজ্য</a></li>
+               <li class="nav-item"><a class="nav-link" href="#">মতামত</a></li>
+               <li class="nav-item"><a class="nav-link" href="#">খেলা</a></li>
+               <li class="nav-item"><a class="nav-link" href="#">বিনোদন</a></li>
+               <li class="nav-item"><a class="nav-link" href="#">চাকরি</a></li>
+               <li class="nav-item"><a class="nav-link" href="#">জীবনযাপন</a></li>
+            </ul>
+            <div class="socials-link pt-4 pb-2 text-center border-top">
+               <span class="content-title">অনুসরণ করুন</span>
+               <div class="d-flex">
+                  <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                  <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                  <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                  <a href="#"><i class="fa-brands fa-youtube"></i></a>
+               </div>
+            </div>
+         </div>
+         <nav class="border d-none d-lg-block" id="navbar">
             <div class="container-fluid container">
                <div class="nav-wrap">
                   <ul class="nav justify-content-center">
@@ -82,7 +119,7 @@
                            <a href="#" class="news-content">
                               <div class="row">
                                  <div class="col-lg-6 d-none d-md-block mb-4 mb-lg-0">
-                                    <h2 class="mb-4"><span class="text-danger">অস্ট্রেলিয়া থেকে সরাসরি</span> / ভেজা মাঠে খেলতে চাননি সাকিব</h2>
+                                    <h2 class="mb-4 header-title"><span class="text-danger">অস্ট্রেলিয়া থেকে সরাসরি</span> / ভেজা মাঠে খেলতে চাননি সাকিব</h2>
                                     <p>সাকিব প্রসঙ্গটি বারবারই এড়িয়ে গেলেও জানা গেছে, মাঠ ভেজা থাকার কারণে ওই সময়ই খেলা আবার শুরু করার পক্ষে ছিলেন না...</p>
                                     <time>১ ঘণ্টা আগে</time>
                                  </div>
@@ -224,6 +261,9 @@
                            <div class="overflow-hidden"><img src="https://images.prothomalo.com/prothomalo-bangla%2F2022-11%2F8bdaf113-e099-44d3-9520-d4dcddae2705%2FTHUMB.jpg?rect=0%2C0%2C1920%2C1080&auto=format%2Ccompress&fmt=webp&format=webp&dpr=1.0&q=70&w=300" alt="" /></div>
                            <h2 class="mt-4"><span class="text-danger">মেরিল ক্যাফে লাইভ </span>/ ফিরলেন রনি</h2>
                            <time>২ ঘণ্টা আগে</time>
+                           <div class="video-icon">
+                              <i class="fa-solid fa-play"></i>
+                           </div>
                         </a>
                      </div>
                      <div class="aside-content mb-4">
@@ -339,8 +379,8 @@
       <section class="tab-section">
          <div class="container-fluid container">
             <div class="tab-wrap">
-               <div class="row border-bottom pb-4">
-                  <div class="container">
+               <div class="row align-items-center">
+                  <div class="col-3 d-none d-lg-block">
                      <ul class="nav">
                         <li class="nav-item">
                            <a class="nav-link active" href="#one" data-bs-toggle="tab">সুখবর</a>
@@ -353,7 +393,23 @@
                         </li>
                      </ul>
                   </div>
+                  <div class="col-6 d-none d-lg-block">
+                     <a href="#" class="title"><i class="fa-solid fa-circle"></i> খেলা</a>
+                  </div>
+               </div>
+               <div class="row border-bottom pb-4">
                   <div class="col-lg-3 mb-4 mb-lg-0">
+                     <ul class="nav d-lg-none">
+                        <li class="nav-item">
+                           <a class="nav-link active" href="#one" data-bs-toggle="tab">সুখবর</a>
+                        </li>
+                        <li class="nav-item">
+                           <a class="nav-link" href="#two" data-bs-toggle="tab">আলোচিত</a>
+                        </li>
+                        <li class="nav-item">
+                           <a class="nav-link" href="#three" data-bs-toggle="tab">পঠিত</a>
+                        </li>
+                     </ul>
                      <div class="tab-content">
                         <div class="tab-pane active" id="one">
                            <a href="#">
@@ -423,9 +479,11 @@
                         </div>
                      </div>
                   </div>
+                  <div class="d-lg-none">
+                     <a href="#" class="title my-4 d-block d-lg-none"><i class="fa-solid fa-circle"></i> খেলা</a>
+                  </div>
                   <div class="col-lg-6">
-                     <a href="#" class="news-content border-top position-relative">
-                        <span><i class="fa-solid fa-circle"></i> খেলা</span>
+                     <a href="#" class="news-content">
                         <div class="overflow-hidden"><img src="https://images.prothomalo.com/prothomalo-bangla%2F2022-11%2F83978823-f77a-464b-bffb-4057db659324%2F16__Za__N_Zee_web.jpg?rect=31%2C0%2C1080%2C720&auto=format%2Ccompress&fmt=webp&format=webp&w=600&dpr=1.0" alt="" /></div>
                         <div class="headline-title"><span>ক্রেজি ফটো অব দ্য ডে</span></div>
                         <div class="video-icon">
@@ -506,7 +564,7 @@
          <div class="container-fluid container">
             <div class="location-wrap border-bottom">
                <div class="title">
-                  <a href="#" class="d-inline-block">সারা দেশ <i class="fa-solid fa-angle-right"></i></a>
+                  <a href="#" class="title">সারা দেশ <i class="fa-solid fa-angle-right"></i></a>
                </div>
                <div class="row row-list py-4 border-bottom">
                   <div class="col-lg-6">
@@ -518,6 +576,9 @@
                            <h2 class="mt-2 mb-3">বাংলাদেশ ইউনিভার্সিটিতে ‘প্রযুক্তি খাতে আধুনিক উদ্ভাবন’ কর্মশালা</h2>
                            <p>ভবিষ্যৎ উদ্যোক্তাদের উদ্দেশে ক্রিস বারি বলেন, ‘কঠোর পরিশ্রম করতে হবে ও সাহসী হতে হবে। প্রযুক্তি নিজ থেকে কোনো সমস্যার সমাধান করতে পারে না। প্রযুক্তিকে সমস্যা সমাধানের উপযোগী করে তৈরি করতে হয়। সেটাই ...</p>
                            <time>৪২ মিনিট আগে</time>
+                           <div class="video-icon">
+                              <i class="fa-solid fa-play"></i>
+                           </div>
                         </div>
                      </a>
                   </div>
@@ -625,7 +686,7 @@
          <div class="container-fluid container">
             <div class="entertainment-wrap pb-4 border-bottom">
                <div class="title d-block">
-                  <a href="#" class="d-inline">বিনোদন <i class="fa-solid fa-angle-right"></i></a>
+                  <a href="#" class="title">বিনোদন <i class="fa-solid fa-angle-right"></i></a>
                </div>
                <div class="row mt-4">
                   <div class="col-md-4 mt-4 mt-lg-0">
@@ -671,6 +732,9 @@
                         <h2 class="my-2" style="font-size: 22px">স্টার সিনেপ্লেক্সে ‘কুড়া পক্ষীর শূন্যে উড়া’</h2>
                         <p>‘কুড়া পক্ষীর শূন্যে উড়া’ মুক্তি নিয়ে অনিশ্চয়তা কেটেছে। শুক্রবার থেকে ঢাকার স্টার সিনেপ্লেক্সের বসুন্ধরা শাখায় আগামী এক সপ্তাহ সিনেমাটি প্রদর্শিত হবে।</p>
                         <time>২৯ মিনিট আগে</time>
+                        <div class="video-icon">
+                           <i class="fa-solid fa-play"></i>
+                        </div>
                      </a>
                   </div>
                   <div class="col-md-4 mt-4 mt-lg-0">
@@ -728,6 +792,9 @@
                            <h2><span class="text-danger">ফটো ফিচার</span> / কোলাহলেও শান্ত পান্ডিয়া আর ইব্রা বললেন অপেক্ষা করতে</h2>
                            <time>১ ঘণ্টা আগে</time>
                         </div>
+                        <div class="img-icon">
+                           <i class="fa-regular fa-images"></i>
+                        </div>
                      </a>
                   </div>
                   <div class="col-md-6 col-lg-3 mb-4">
@@ -736,6 +803,9 @@
                         <div class="mt-3">
                            <h2><span class="text-danger">ফটো ফিচার</span> / কোলাহলেও শান্ত পান্ডিয়া আর ইব্রা বললেন অপেক্ষা করতে</h2>
                            <time>১ ঘণ্টা আগে</time>
+                        </div>
+                        <div class="img-icon">
+                           <i class="fa-regular fa-images"></i>
                         </div>
                      </a>
                   </div>
@@ -1138,7 +1208,7 @@
       <footer style="margin-top: 4rem">
          <div class="container-fluid container">
             <div class="footer-wrap pt-4 border-top">
-               <a class="d-inline-block w-25" href="#"><img src="img/footer-logo.png" alt="" /></a>
+               <a class="title-block w-25" href="#"><img src="img/footer-logo.png" alt="" /></a>
                <div class="footer-content">
                   <div class="top-content py-4">
                      <a href="#">চাকরি</a>
@@ -1192,5 +1262,7 @@
          </div>
       </footer>
       <!--================ END FOOTER SECTION ================-->
+
+      <script src="js/script.js"></script>
    </body>
 </html>
